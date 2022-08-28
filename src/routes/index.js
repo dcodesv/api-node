@@ -2,8 +2,8 @@ const express =  require('express');
 const router = express.Router();
 const mysqlConnection = require('../database');
 
-router.get('/', (req, res)=>{
-    mysqlConnection.query('SELECT * FROM denucias ',(err,rows, fields)=>{
+router.get('/denuncias', (req, res)=>{
+    mysqlConnection.query('SELECT * FROM Denucias',(err,rows, fields)=>{
         if(!err){
             res.json(rows);
         }else{
@@ -18,7 +18,7 @@ router.get('/check-health', (req, res)=>{
 
 router.get('/:id',(req, res) =>{
     const {id} = req.params;
-    mysqlConnection.query('SELECT * FROM denucias WHERE IdDenuncia = ?', [id],(err,rows, fields)=>{
+    mysqlConnection.query('SELECT * FROM Denucias WHERE IdDenuncia = ?', [id],(err,rows, fields)=>{
         if(!err){
             res.json(rows[0]);
         }else{
