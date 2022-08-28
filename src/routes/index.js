@@ -12,6 +12,10 @@ router.get('/', (req, res)=>{
     } );
 });
 
+router.get('/check-health', (req, res)=>{
+    res.status(200).json({message:'Servicio corriendo en puerto 3000'});
+});
+
 router.get('/:id',(req, res) =>{
     const {id} = req.params;
     mysqlConnection.query('SELECT * FROM denucias WHERE IdDenuncia = ?', [id],(err,rows, fields)=>{
