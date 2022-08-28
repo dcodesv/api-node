@@ -3,9 +3,9 @@ const mysql = require('mysql');
 
 const mysqlConnection = mysql.createConnection({
     host: 'localhost',
-    user : 'root',
-    password: 'Admin',
-    database: 'denunciasapp'
+    user : 'sonzacatealert_dbsys',
+    password: 'Sonzacate_2022',
+    database: 'DenunciasApp'
 
 });
 mysqlConnection.connect(function(err){
